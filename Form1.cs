@@ -44,8 +44,9 @@ namespace Assignment2
         {
             pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            for (int i = 1; i < 3; i++)
+            for (int i = 1; i <= 6 ; i++)
             {
+
                 pbImage.Image = Image.FromFile("die" + i.ToString() + ".gif");
                 pbImage.Refresh();
                 Thread.Sleep(300);

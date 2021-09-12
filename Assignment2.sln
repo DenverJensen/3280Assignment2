@@ -5,6 +5,16 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment2", "Assignment2.csproj", "{7D232FA6-53DF-4847-8245-7732CA61A743}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{999AC2F1-1E59-4D54-ACF4-2BCBFA07DD4E}"
+	ProjectSection(SolutionItems) = preProject
+		images\die1.gif = images\die1.gif
+		images\die2.gif = images\die2.gif
+		images\die3.gif = images\die3.gif
+		images\die4.gif = images\die4.gif
+		images\die5.gif = images\die5.gif
+		images\die6.gif = images\die6.gif
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

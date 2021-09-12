@@ -46,10 +46,22 @@ namespace Assignment2
 
             for (int i = 1; i <= 6 ; i++)
             {
-
                 pbImage.Image = Image.FromFile("die" + i.ToString() + ".gif");
                 pbImage.Refresh();
                 Thread.Sleep(300);
+
+
+
+                /*
+                pbImage.Image = Image.FromFile("C:/Users/jense/OneDrive/Desktop/C#/Assignments/Assignment2/images/die6.gif");
+                pbImage.Refresh();
+                Thread.Sleep(300);
+                pbImage.Image = Image.FromFile("C:/Users/jense/OneDrive/Desktop/C#/Assignments/Assignment2/images/die5.gif");
+                pbImage.Refresh();
+                Thread.Sleep(300);
+                pbImage.Image = Image.FromFile("C:/Users/jense/OneDrive/Desktop/C#/Assignments/Assignment2/images/die4.gif");
+                pbImage.Refresh();
+                Thread.Sleep(300);*/
             }
         }
     }

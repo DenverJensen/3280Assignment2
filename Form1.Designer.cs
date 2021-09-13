@@ -132,15 +132,14 @@ namespace Assignment2
             this.lblEnterGuess.Size = new System.Drawing.Size(113, 13);
             this.lblEnterGuess.TabIndex = 3;
             this.lblEnterGuess.Text = "Enter your guess (1-6):";
-            this.lblEnterGuess.Click += new System.EventHandler(this.lblEnterGuess_Click);
             // 
             // txtEnterGuess
             // 
             this.txtEnterGuess.Location = new System.Drawing.Point(194, 163);
+            this.txtEnterGuess.MaxLength = 1;
             this.txtEnterGuess.Name = "txtEnterGuess";
             this.txtEnterGuess.Size = new System.Drawing.Size(58, 20);
             this.txtEnterGuess.TabIndex = 4;
-            this.txtEnterGuess.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnRoll
             // 
@@ -160,6 +159,7 @@ namespace Assignment2
             this.btnReset.TabIndex = 6;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // pbImage
             // 

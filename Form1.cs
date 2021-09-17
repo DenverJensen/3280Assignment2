@@ -14,7 +14,7 @@ using System.Threading;
 namespace Assignment2
 {
     /// <summary>
-    /// Game board form for Die Guess game. Assignment 2 CS 
+    /// Game board form for Die Guess game. Assignment 2
     /// 
     /// 
     /// created by Denver Jensen 09/12/2021
@@ -38,12 +38,12 @@ namespace Assignment2
 
             //create new game instance
             game = new Game();
-            // refreshStats();
         }
 
 
         /// <summary>
         /// validate user input is number 1-6 for dice roll. If not valid, show error label.
+        /// If no errors, roll dice and update stats
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -63,17 +63,20 @@ namespace Assignment2
                 //roll dice
                 //this should be used to create relative reference, but not sure how to use it
                 //MyImage.Source = new BitmapImage(new Uri(@"Images/die1.gif", UriKind.Relative));
+
                 lblError.Visible = false;
                 pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
                 for (int i = 1; i <= 6; i++)
                 {
+                    //this will not work without relative reference update. 
                     //pbImage.Image = Image.FromFile(@"images/die" + i.ToString() + ".gif");
+
                     pbImage.Image = Image.FromFile("C:/Users/jense/OneDrive/Desktop/C#/Assignments/Assignment2/images/die" + i.ToString() + ".gif");
                     pbImage.Refresh();
                     Thread.Sleep(150);
 
                 }
-                //play round
+                //play round using guess if no errors
                 int roll = game.playRound(Int32.Parse(txtEnterGuess.Text));
                 pbImage.Image = Image.FromFile("C:/Users/jense/OneDrive/Desktop/C#/Assignments/Assignment2/images/die" + roll.ToString() + ".gif");
                 //refresh stats
@@ -112,10 +115,14 @@ namespace Assignment2
         /// <param name="guessed">number of times guessed</param>
         public void putFormatLine(int face, int numRolled, double Rolled, int guessed)
         {
-            rtbResults.Text += String.Format("{0,-5}  |           {1,-10}|         {2,-8:P2}    |      {3}\n", face, numRolled, Rolled, guessed);
+            rtbResults.Text += String.Format("{0,-7} |          {1,-12} |      {2,-12:P2}| {3,15}\n", face, numRolled, Rolled, guessed);
         }
-        #endregion
 
+        /// <summary>
+        /// method for resetting the main results textbox, guess textbox and refresh the stats on the gameboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReset_Click(object sender, EventArgs e)
         {
             game = new Game();
@@ -123,5 +130,6 @@ namespace Assignment2
             txtEnterGuess.Text = null;
             refreshStats();
         }
+        #endregion
     }
 }

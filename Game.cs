@@ -12,15 +12,15 @@ namespace Assignment2
 
         #region Attributes
         /// <summary>
-        /// The total number of games played. Use rollDice() to increment.
+        /// The total number of games played. 
         /// </summary>
         public int gamesPlayed;
         /// <summary>
-        /// The total number of games Won. Use rollDice() to increment. 
+        /// The total number of games Won.  
         /// </summary>
         public int gamesWon;
         /// <summary>
-        /// The total number of games Lost. Use rollDice() to increment.
+        /// The total number of games Lost.
         /// </summary>
         public int gamesLost;
         /// <summary>
@@ -69,6 +69,13 @@ namespace Assignment2
             die6 = new Die(Die.Face.six);
 
         }
+        #endregion
+        #region methods
+        /// <summary>
+        /// increments the games won/lost fields and all stats for specific die
+        /// </summary>
+        /// <param name="guess">user input guess from gameboard</param>
+        /// <returns></returns>
         public int playRound(int guess)
         {
             int roll = random.Next(1, 7);
@@ -81,9 +88,7 @@ namespace Assignment2
             {
                 gamesLost++;
             }
-
-
-
+            //update frequency and roll %
             switch (roll)
             {
                 case 1:
@@ -113,7 +118,7 @@ namespace Assignment2
                 default:
                     break;
             }
-            //Incrementing the guess based on the guess.
+            //Incrementing the guess
             switch (guess)
             {
                 case 1:
@@ -137,6 +142,7 @@ namespace Assignment2
                 default:
                     break;
             }
+            refreshPercent();
             return roll;
         }
         /// <summary>

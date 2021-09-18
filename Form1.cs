@@ -68,17 +68,19 @@ namespace Assignment2
                 pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
                 for (int i = 1; i <= 6; i++)
                 {
-                    //this will not work without relative reference update. 
-                    //pbImage.Image = Image.FromFile(@"images/die" + i.ToString() + ".gif");
+                    //shuffle thru die images to simulate roll 
+                    pbImage.Image = Image.FromFile(@"images/die" + i.ToString() + ".gif");
 
-                    pbImage.Image = Image.FromFile("C:/Users/jense/OneDrive/Desktop/C#/Assignments/Assignment2/images/die" + i.ToString() + ".gif");
+                    //pbImage.Image = Image.FromFile("C:/Users/jense/OneDrive/Desktop/C#/Assignments/Assignment2/images/die" + i.ToString() + ".gif");
                     pbImage.Refresh();
                     Thread.Sleep(150);
 
                 }
                 //play round using guess if no errors
                 int roll = game.playRound(Int32.Parse(txtEnterGuess.Text));
-                pbImage.Image = Image.FromFile("C:/Users/jense/OneDrive/Desktop/C#/Assignments/Assignment2/images/die" + roll.ToString() + ".gif");
+                pbImage.Image = Image.FromFile(@"images/die" + roll.ToString() + ".gif");
+
+                //pbImage.Image = Image.FromFile("C:/Users/jense/OneDrive/Desktop/C#/Assignments/Assignment2/images/die" + roll.ToString() + ".gif");
                 //refresh stats
                 refreshStats();
             }
